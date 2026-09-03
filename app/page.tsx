@@ -10,7 +10,7 @@ export default function Home() {
           <div>
             <span className="kicker">AI · FULL-STACK · INTERNAL TOOLS</span>
             <h1>Construyo productos con IA que solucionan trabajo real.</h1>
-            <p className="heroText">{site.tagline} Especialmente asistentes internos, bases de conocimiento, automatización y experiencias web orientadas a operaciones.</p>
+            <p className="heroText">{site.tagline} Especialmente asistentes internos, bases de conocimiento, automatización y experiencias web orientadas a operaciones. </p>
             <div className="buttonRow">
               <Link href="/projects" className="button primary">Ver proyectos</Link>
               <Link href="/demo/gaudi" className="button secondary">Probar Gaudí Demo</Link>
