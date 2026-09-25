@@ -58,3 +58,12 @@ La demo está pensada como **portfolio-safe**. Si en el futuro conectas un model
 - Usa una base de conocimiento creada específicamente para la demo.
 - No reutilices documentación interna sin autorización expresa.
 - Registra únicamente datos que puedas almacenar legalmente y con el consentimiento apropiado.
+
+## Gaudí: enlace real y presentación
+
+El case study de Gaudí incluye ahora:
+
+- Aplicación real protegida: `https://gaudi-help.vercel.app/`
+- Presentación técnica en inglés: `public/files/Gaudi_functionality_and_architecture_EN.pptx`
+
+El portfolio no incluye credenciales del entorno real. El acceso a Gaudí permanece protegido en la aplicación desplegada.

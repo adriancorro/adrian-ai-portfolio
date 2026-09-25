@@ -2,6 +2,9 @@ import Link from "next/link";
 
 export const metadata = { title: "Gaudí Case Study" };
 
+const GAUDI_LIVE_URL = "https://gaudi-help.vercel.app/";
+const GAUDI_PRESENTATION_URL = "/files/Gaudi_functionality_and_architecture_EN.pptx";
+
 export default function GaudiCaseStudy() {
   return (
     <>
@@ -9,8 +12,16 @@ export default function GaudiCaseStudy() {
         <div className="container">
           <div className="caseMeta"><span>CASE STUDY</span><span>AI · INTERNAL TOOLS · SUPPORT</span></div>
           <h1>Gaudí — convertir conocimiento de soporte en una experiencia conversacional.</h1>
-          <p className="pageLead">Un asistente interno diseñado para reducir fricción en consultas repetitivas de IT y onboarding. Esta presentación pública describe el enfoque del producto sin revelar información, clientes, dominios, credenciales ni procedimientos internos de la empresa.</p>
-          <div className="buttonRow"><Link href="/demo/gaudi" className="button primary">Abrir demo pública</Link><Link href="/projects" className="button secondary">Todos los proyectos</Link></div>
+          <p className="pageLead">Un asistente interno diseñado para reducir fricción en consultas repetitivas de IT y onboarding. Esta presentación pública describe el enfoque del producto sin revelar credenciales ni secretos de acceso.</p>
+          <div className="buttonRow">
+            <a href={GAUDI_LIVE_URL} className="button primary" target="_blank" rel="noreferrer">Abrir Gaudí real</a>
+            <a href={GAUDI_PRESENTATION_URL} className="button secondary" download>Presentación EN · PowerPoint</a>
+            <Link href="/demo/gaudi" className="button secondary">Demo pública</Link>
+          </div>
+          <div className="liveProjectLink" aria-label="Enlace de producción de Gaudí">
+            <span>LIVE · ACCESO PROTEGIDO</span>
+            <a href={GAUDI_LIVE_URL} target="_blank" rel="noreferrer">https://gaudi-help.vercel.app/</a>
+          </div>
         </div>
       </section>
 
@@ -59,12 +70,21 @@ export default function GaudiCaseStudy() {
 
       <section className="section securitySection">
         <div className="container caseGrid">
-          <div className="stickyTitle"><span className="eyebrow">04 · Public demo strategy</span><h2>Demostrar capacidad sin filtrar información interna.</h2></div>
-          <div className="caseText"><p>La demo de este portfolio no se conecta a la base de conocimiento, infraestructura ni APIs internas del proyecto original. Utiliza organizaciones, proyectos, respuestas y procesos inventados.</p><ul className="checkList"><li>Sin nombres reales de clientes o proyectos.</li><li>Sin dominios, VPNs, usernames o credenciales.</li><li>Sin procedimientos internos exactos.</li><li>Sin datos de usuarios, logs ni conversaciones reales.</li><li>Sin claves API privadas en el frontend.</li></ul><Link href="/demo/gaudi" className="textLink standalone">Probar la demo segura →</Link></div>
+          <div className="stickyTitle"><span className="eyebrow">04 · Live product & public demo</span><h2>Mostrar el producto real manteniendo el acceso controlado.</h2></div>
+          <div className="caseText">
+            <p>La aplicación real de Gaudí está desplegada en Vercel y protegida con autenticación. El portfolio no publica credenciales: quien tenga acceso autorizado puede abrir la aplicación desde el enlace de producción.</p>
+            <p><a className="textLink standalone" href={GAUDI_LIVE_URL} target="_blank" rel="noreferrer">https://gaudi-help.vercel.app/ →</a></p>
+            <p>La demo pública del portfolio sigue siendo una simulación sanitizada y separada del entorno interno.</p>
+            <ul className="checkList"><li>El entorno real requiere autenticación.</li><li>Las credenciales no se almacenan en el portfolio.</li><li>La demo pública utiliza información ficticia.</li><li>La presentación técnica en inglés puede descargarse como PowerPoint.</li></ul>
+            <div className="buttonRow compactButtons">
+              <a href={GAUDI_PRESENTATION_URL} className="button secondary" download>Descargar presentación EN</a>
+              <Link href="/demo/gaudi" className="button secondary">Probar demo segura</Link>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="section ctaSection"><div className="container ctaBox"><div><span className="eyebrow">Outcome</span><h2>El proyecto demuestra producto, frontend, backend, IA, UX y pensamiento de seguridad.</h2></div><Link href="/demo/gaudi" className="button primary">Verlo funcionando</Link></div></section>
+      <section className="section ctaSection"><div className="container ctaBox"><div><span className="eyebrow">Outcome</span><h2>El proyecto demuestra producto, frontend, backend, IA, UX, despliegue y control de acceso.</h2></div><a href={GAUDI_LIVE_URL} className="button primary" target="_blank" rel="noreferrer">Abrir Gaudí</a></div></section>
     </>
   );
 }
