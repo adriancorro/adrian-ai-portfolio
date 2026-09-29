@@ -1,20 +1,3 @@
-import { ProjectCard } from "@/components/ProjectCard";
-
-export const metadata = { title: "Proyectos" };
-
-export default function ProjectsPage() {
-  return (
-    <section className="section pageHero">
-      <div className="container">
-        <span className="kicker">SELECTED WORK</span>
-        <h1>Proyectos donde producto, software e IA se encuentran.</h1>
-        <p className="pageLead">Mi objetivo es mostrar cómo identifico un problema, diseño la experiencia, construyo la solución y pienso en seguridad y operación.</p>
-        <div className="projectGrid projectPageGrid">
-          <ProjectCard eyebrow="CASE STUDY" title="Gaudí — AI IT Support Assistant" description="Asistente interno creado a partir de una necesidad empresarial real. Este portfolio solo muestra una representación sanitizada: los datos y procedimientos del demo son ficticios." tags={["Next.js", "OpenAI API", "Context", "Feedback", "Responsive UI"]} href="/projects/gaudi" status="Featured" />
-          <ProjectCard eyebrow="PRODUCT CONCEPT" title="AI Employee Onboarding" description="Sistema para responder dudas de nuevos empleados, guiar tareas de onboarding y centralizar conocimiento interno." tags={["AI", "Onboarding", "Knowledge", "Automation"]} status="En diseño" />
-          <ProjectCard eyebrow="PRODUCT CONCEPT" title="AI Analytics Copilot" description="Interfaz conversacional que transforma preguntas de negocio en consultas, visualizaciones y explicaciones de métricas." tags={["AI", "Data", "Analytics", "APIs"]} status="Roadmap" />
-        </div>
-      </div>
-    </section>
-  );
-}
+"use client";
+import {ProjectCard} from "@/components/ProjectCard"; import {useLanguage} from "@/components/LanguageProvider";
+export default function ProjectsPage(){const {language:l}=useLanguage();const en=l==="en";return <section className="section pageHero"><div className="container"><span className="kicker">SELECTED WORK</span><h1>{en?"Projects where product, software, and AI meet.":"Proyectos donde producto, software e IA se encuentran."}</h1><p className="pageLead">{en?"My goal is to show how I identify a problem, design the experience, build the solution, and think about security and operations.":"Mi objetivo es mostrar cómo identifico un problema, diseño la experiencia, construyo la solución y pienso en seguridad y operación."}</p><div className="projectGrid projectPageGrid"><ProjectCard eyebrow="CASE STUDY" title="Gaudí — AI IT Support Assistant" description={en?"Internal assistant built from a real business need. This portfolio only shows a sanitized representation: demo data and procedures are fictional.":"Asistente interno creado a partir de una necesidad empresarial real. Este portfolio solo muestra una representación sanitizada: los datos y procedimientos del demo son ficticios."} tags={["Next.js","OpenAI API","Context","Feedback","Responsive UI"]} href="/projects/gaudi" status="Featured"/><ProjectCard eyebrow="PRODUCT CONCEPT" title="AI Employee Onboarding" description={en?"A system to answer new-hire questions, guide onboarding tasks, and centralize internal knowledge.":"Sistema para responder dudas de nuevos empleados, guiar tareas de onboarding y centralizar conocimiento interno."} tags={["AI","Onboarding","Knowledge","Automation"]} status={en?"In design":"En diseño"}/><ProjectCard eyebrow="PRODUCT CONCEPT" title="AI Analytics Copilot" description={en?"Conversational interface that turns business questions into queries, visualizations, and metric explanations.":"Interfaz conversacional que transforma preguntas de negocio en consultas, visualizaciones y explicaciones de métricas."} tags={["AI","Data","Analytics","APIs"]} status="Roadmap"/></div></div></section>}

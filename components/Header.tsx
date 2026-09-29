@@ -1,20 +1,3 @@
-import Link from "next/link";
-import { site } from "@/lib/site";
-
-export function Header() {
-  return (
-    <header className="siteHeader">
-      <div className="container navWrap">
-        <Link href="/" className="brand" aria-label={`${site.name}, inicio`}>
-          <span className="brandMark">AC</span>
-          <span>{site.name}</span>
-        </Link>
-        <nav className="navLinks" aria-label="Navegación principal">
-          <Link href="/projects">Proyectos</Link>
-          <Link href="/projects/gaudi">Gaudí</Link>
-          <Link href="/demo/gaudi" className="navCta">Demo</Link>
-        </nav>
-      </div>
-    </header>
-  );
-}
+"use client";
+import Link from "next/link"; import {site} from "@/lib/site"; import {useLanguage} from "./LanguageProvider"; import {LanguageToggle} from "./LanguageToggle";
+export function Header(){const {language:l}=useLanguage();return <header className="siteHeader"><div className="container navWrap"><Link href="/" className="brand" aria-label={`${site.name}, ${l==="en"?"home":"inicio"}`}><span className="brandMark">AC</span><span>{site.name}</span></Link><nav className="navLinks" aria-label={l==="en"?"Main navigation":"Navegación principal"}><Link href="/projects">{l==="en"?"Projects":"Proyectos"}</Link><Link href="/projects/gaudi">Gaudí</Link><Link href="/demo/gaudi" className="navCta">Demo</Link><LanguageToggle/></nav></div></header>}

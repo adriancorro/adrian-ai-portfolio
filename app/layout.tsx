@@ -1,23 +1,3 @@
-import type { Metadata } from "next";
-import type { ReactNode } from "react";
-import "./globals.css";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { site } from "@/lib/site";
-
-export const metadata: Metadata = {
-  title: { default: `${site.name} · ${site.role}`, template: `%s · ${site.name}` },
-  description: site.tagline,
-};
-
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
-  return (
-    <html lang="es">
-      <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </body>
-    </html>
-  );
-}
+import type {Metadata} from "next"; import type {ReactNode} from "react"; import "./globals.css"; import {Header} from "@/components/Header"; import {Footer} from "@/components/Footer"; import {LanguageProvider} from "@/components/LanguageProvider"; import {site} from "@/lib/site";
+export const metadata:Metadata={title:{default:`${site.name} · ${site.role}`,template:`%s · ${site.name}`},description:"I build AI tools that solve real business problems."};
+export default function RootLayout({children}:{children:ReactNode}){return <html lang="en"><body><LanguageProvider><Header/><main>{children}</main><Footer/></LanguageProvider></body></html>}

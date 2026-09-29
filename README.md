@@ -1,69 +1,26 @@
 # Adrián Corro — AI Portfolio
 
-Portfolio profesional construido con Next.js para mostrar proyectos de IA, herramientas internas y automatización.
+Bilingual (English/Spanish) professional portfolio built with Next.js. English is the default language; visitors can switch between EN and ES from the header. The preference is saved in localStorage.
 
-## Proyecto destacado: Gaudí
+## Featured project: Gaudí
+Gaudí comes from a real business use case. The public demo is deliberately fictional and sanitized. It contains no real client names, credentials, internal domains, logs, or exact company procedures.
 
-Gaudí nació de un caso de uso empresarial real. **La demo incluida en este repositorio es deliberadamente ficticia y sanitizada**. No contiene nombres reales de clientes, dominios, VPNs, usernames, credenciales, documentación interna, logs ni procedimientos exactos de la empresa.
+- Live protected app: https://gaudi-help.vercel.app/
+- English technical presentation: `public/files/Gaudi_functionality_and_architecture_EN.pptx`
+- Public safe demo: `/demo/gaudi`
 
-La demo pública es una simulación local: no llama a APIs privadas ni necesita claves de OpenAI.
-
-## Stack
-
-- Next.js 16
-- React 19
-- TypeScript
-- CSS nativo
-- App Router
-
-## Ejecutar localmente
-
+## Run locally
 ```bash
 npm install
 npm run dev
 ```
+Open http://localhost:3000
 
-Abre `http://localhost:3000`.
-
-## Antes de publicar
-
-1. Edita `lib/site.ts` y añade tu LinkedIn/email si quieres mostrarlos.
-2. Si “Gaudí” es un nombre interno protegido por tu empresa, renombra la demo antes de publicarla.
-3. Confirma que la política interna/NDA permite mencionar el proyecto incluso de forma anonimizada.
-4. Edita `app/sitemap.ts` y cambia `https://example.com` por tu dominio final.
-5. Revisa cualquier texto que quieras adaptar a ofertas concretas.
-6. No copies datos ni procedimientos del Gaudí interno a este repositorio público.
-
-## Subir a GitHub
-
+## Build check
 ```bash
-git init
-git add .
-git commit -m "Initial AI portfolio"
-git branch -M main
-git remote add origin https://github.com/TU-USUARIO/TU-REPO.git
-git push -u origin main
+npm run lint
+npm run build
 ```
 
-## Deploy en Vercel
-
-Importa el repositorio desde Vercel. Este proyecto no necesita variables de entorno para funcionar.
-
-## Seguridad de la demo
-
-La demo está pensada como **portfolio-safe**. Si en el futuro conectas un modelo real:
-
-- Mantén las API keys solo en variables de entorno del servidor.
-- No envíes secretos al navegador.
-- Usa una base de conocimiento creada específicamente para la demo.
-- No reutilices documentación interna sin autorización expresa.
-- Registra únicamente datos que puedas almacenar legalmente y con el consentimiento apropiado.
-
-## Gaudí: enlace real y presentación
-
-El case study de Gaudí incluye ahora:
-
-- Aplicación real protegida: `https://gaudi-help.vercel.app/`
-- Presentación técnica en inglés: `public/files/Gaudi_functionality_and_architecture_EN.pptx`
-
-El portfolio no incluye credenciales del entorno real. El acceso a Gaudí permanece protegido en la aplicación desplegada.
+## Deploy
+Import the repository into Vercel. No environment variables are required for the portfolio demo.
